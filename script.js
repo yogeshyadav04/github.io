@@ -11,7 +11,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Active Nav Highlight
+// Active Nav Link Highlight
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
@@ -19,7 +19,7 @@ window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 100;
-    if (pageYOffset >= sectionTop) {
+    if (window.scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
   });
@@ -40,5 +40,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+
+    // Close mobile nav if open
+    document.getElementById("navMenu").classList.remove("active");
   });
+});
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
 });
