@@ -1,10 +1,4 @@
-:root {
-  --main: #00b894;
-  --dark: #2d3436;
-  --light: #dfe6e9;
-  --bg: #f5f6fa;
-}
-
+/* ==== Base Reset ==== */
 * {
   margin: 0;
   padding: 0;
@@ -12,83 +6,112 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --main: #00ffcc;
+  --secondary: #1e1e2f;
+  --text: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--dark);
-  line-height: 1.6;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
+canvas#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* ==== Navbar ==== */
 .navbar {
-  background: white;
+  backdrop-filter: blur(10px);
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  align-items: center;
 }
 
-
-.logo {
-  font-weight: bold;
+.navbar .logo {
+  font-size: 1.6rem;
   color: var(--main);
-  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .nav-links li a {
+  color: var(--text);
   text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .nav-links li a:hover {
   color: var(--main);
 }
 
+/* ==== Hero Section ==== */
 .hero {
   text-align: center;
-  padding: 5rem 1rem;
-  background: linear-gradient(to right, #00b894, #0984e3);
-  color: white;
+  padding: 6rem 2rem;
+  background: radial-gradient(ellipse at center, #1e1e2f 0%, transparent 100%);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero span {
-  color: #ffeaa7;
+  color: var(--main);
 }
 
-.btn {
+.hero .btn {
   margin-top: 1rem;
   padding: 0.7rem 1.5rem;
-  background: white;
-  color: var(--main);
-  border: none;
   border-radius: 25px;
+  background: var(--main);
+  color: #111;
   font-weight: bold;
+  border: none;
   cursor: pointer;
-  text-decoration: none;
   transition: 0.3s;
 }
 
-.btn:hover {
-  background: var(--light);
+.hero .btn:hover {
+  background: #0ff;
+  color: #000;
 }
 
+/* ==== Card Sections ==== */
 .card {
   max-width: 960px;
   margin: 3rem auto;
-  background: white;
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .skills-list {
@@ -98,10 +121,11 @@ body {
 }
 
 .skills-list li {
-  background: var(--main);
-  color: white;
   padding: 0.5rem 1rem;
-  border-radius: 20px;
+  border-radius: 25px;
+  background: var(--main);
+  color: #000;
+  font-weight: bold;
 }
 
 .project-grid {
@@ -111,29 +135,32 @@ body {
 }
 
 .project {
-  background: var(--light);
+  background: rgba(0, 255, 204, 0.1);
+  border: 1px solid var(--glass-border);
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.project:hover {
+  transform: scale(1.05);
 }
 
 footer {
   text-align: center;
   padding: 2rem;
-  background: var(--dark);
-  color: white;
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text);
 }
 
 footer a {
-  color: #81ecec;
+  color: var(--main);
   margin-left: 10px;
+  text-decoration: none;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  /* Reveal Animation */
+/* ==== Reveal Animation ==== */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -145,4 +172,33 @@ footer a {
   transform: translateY(0);
 }
 
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: var(--glass-bg);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .card {
+    margin: 1.5rem;
+  }
+}
+
+/* ==== Custom Cursor ==== */
+.custom-cursor {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--main);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
 }
