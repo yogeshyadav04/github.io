@@ -19,7 +19,7 @@ window.addEventListener("mousemove", (e) => {
   cursor.style.left = `${e.clientX}px`;
 });
 
-// Background Canvas Animation
+// Background Canvas Particle Animation
 const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -66,17 +66,23 @@ function initParticles() {
   }
 }
 
-function animate() {
-  requestAnimationFrame(animate);
+function animateParticles() {
+  requestAnimationFrame(animateParticles);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   particlesArray.forEach(p => p.update());
 }
 
 initParticles();
-animate();
+animateParticles();
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   initParticles();
+});
+
+// Theme Toggle
+const toggleBtn = document.getElementById("themeToggle");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light");
 });
