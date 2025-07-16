@@ -123,11 +123,18 @@ ul {
   background: #007bff;
   color: #fff;
   border-radius: 30px;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
+
 .btn:hover {
   background: #0056cc;
+  box-shadow: 0 6px 18px rgba(0, 86, 204, 0.4);
 }
+
 
 /* Skills */
 .skills-list {
