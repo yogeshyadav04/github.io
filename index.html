@@ -3,96 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogesh Yadav | Web Developer Portfolio</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Tanmay Kumawat | Full Stack Developer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- Google Fonts - Inter (as per previous request for font) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* Custom global styles */
-        body {
-            font-family: 'Inter', sans-serif; /* Keeping Inter as per earlier request */
-            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
-            background: linear-gradient(to bottom right, #1a202c, #10192e); /* Dark gradient background from user's provided code */
-        }
-
-        /* Gradient Text Class (adapted to new color scheme from user's provided code) */
-        .gradient-text {
-            background-image: linear-gradient(to right, #2dd4bf, #a7f3d0, #67e8f9); /* Teal, Lime, Cyan */
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        /* Blob Animation Keyframes */
-        @keyframes blob {
-            0% {
-                transform: translate(0px, 0px) scale(1);
-            }
-            33% {
-                transform: translate(30px, -50px) scale(1.1);
-            }
-            66% {
-                transform: translate(-20px, 20px) scale(0.9);
-            }
-            100% {
-                transform: translate(0px, 0px) scale(1);
-            }
-        }
-
-        .animate-blob {
-            animation: blob 7s infinite;
-        }
-
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
-
-        /* Pulse animation for profile picture border (adapted to new color scheme) */
-        @keyframes pulse-border {
-            0% {
-                box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7); /* Teal-300 */
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(45, 212, 191, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(45, 212, 191, 0);
-            }
-        }
-        .animate-pulse-border {
-            animation: pulse-border 2s infinite;
-        }
-
-        /* Mobile menu specific styles */
-        #mobile-menu.max-h-0 {
-            transition: max-height 0.3s ease-out;
-        }
-        #mobile-menu.max-h-screen {
-            transition: max-height 0.3s ease-in;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="text-gray-300">
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-gray-800 bg-opacity-70 backdrop-blur-md text-white" id="main-header">
+<body class="bg-gradient-to-br from-gray-900 to-blue-900 text-gray-300 font-[Poppins]">
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out bg-opacity-70 backdrop-blur-md text-white" id="main-header">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-teal-300">Yogesh.dev</a>
+            <a href="#" class="text-2xl font-bold text-teal-300">Tanmay.dev</a>
 
             <ul class="hidden md:flex space-x-8">
-                <li><button onclick="scrollToSection('hero')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="hero">Home</button></li>
-                <li><button onclick="scrollToSection('about')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="about">About</button></li>
-                <li><button onclick="scrollToSection('skills')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="skills">Skills</button></li>
-                <li><button onclick="scrollToSection('projects')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="projects">Projects</button></li>
-                <li><button onclick="scrollToSection('experience')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="experience">Experience</button></li>
-                <li><button onclick="scrollToSection('contact')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="contact">Contact</button></li>
+                <li><a href="#hero" class="font-medium text-gray-400 hover:text-teal-300 transition duration-300">Home</a></li>
+                <li><a href="#about" class="font-medium text-gray-400 hover:text-teal-300 transition duration-300">About</a></li>
+                <li><a href="#skills" class="font-medium text-gray-400 hover:text-teal-300 transition duration-300">Skills</a></li>
+                <li><a href="#projects" class="font-medium text-gray-400 hover:text-teal-300 transition duration-300">Projects</a></li>
+                <li><a href="#experience" class="font-medium text-gray-400 hover:text-teal-300 transition duration-300">Experience</a></li>
+                <li><a href="#contact" class="font-medium text-gray-400 hover:text-teal-300 transition duration-300">Contact</a></li>
             </ul>
 
             <button id="hamburger-menu" class="md:hidden focus:outline-none text-gray-300 hover:text-teal-300">
@@ -102,120 +29,291 @@
 
         <div id="mobile-menu" class="md:hidden py-4 transition-all duration-300 ease-in-out max-h-0 overflow-hidden bg-gray-800 bg-opacity-95">
             <ul class="flex flex-col items-center space-y-4">
-                <li><button onclick="scrollToSection('hero'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Home</button></li>
-                <li><button onclick="scrollToSection('about'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">About</button></li>
-                <li><button onclick="scrollToSection('skills'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Skills</button></li>
-                <li><button onclick="scrollToSection('projects'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Projects</button></li>
-                <li><button onclick="scrollToSection('experience'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Experience</button></li>
-                <li><button onclick="scrollToSection('contact'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Contact</button></li>
+                <li><a href="#hero" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Home</a></li>
+                <li><a href="#about" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">About</a></li>
+                <li><a href="#skills" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Skills</a></li>
+                <li><a href="#projects" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Projects</a></li>
+                <li><a href="#experience" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Experience</a></li>
+                <li><a href="#contact" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Contact</a></li>
             </ul>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden py-20 md:py-0 px-4">
+        <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden py-20 md:py-0">
             <div class="absolute inset-0 bg-black opacity-40"></div>
-            <!-- Background Gradients (Blobs) -->
-            <div class="absolute inset-0 z-0 opacity-30">
-                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-1/2 right-1/4 w-96 h-96 bg-lime-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-            </div>
-
-            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between z-10 text-center md:text-left hero-content">
-                <div class="mb-10 md:mb-0 md:w-1/2">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between z-10">
+                <div class="text-center md:text-left mb-10 md:mb-0 md:w-1/2 animate-fade-in-up">
                     <p class="text-lg md:text-xl mb-2 text-gray-400">Hello, I'm</p>
-                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-9 gradient-text">
-                        Yogesh Yadav
+                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-9 bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">
+                        <span class="animated-name">Tanmay Kumawat</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-gray-300 mb-8">
-                        An eager and highly motivated <span class="gradient-text">Web Developer</span>
-                    </p>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="#projects" class="inline-block px-6 py-3 rounded-full font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 bg-teal-500 text-gray-900 hover:bg-teal-400 hover:shadow-xl">View Projects <i class="fas fa-arrow-right ml-2"></i></a>
-                        <a href="#contact" class="inline-block px-6 py-3 rounded-full font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-gray-900 hover:shadow-xl">Hire Me <i class="fas fa-handshake ml-2"></i></a>
+                    <div class="space-x-4">
+                        <a href="#projects" class="inline-block px-6 py-3 rounded-full font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 bg-teal-500 text-gray-900 hover:bg-teal-400">View Projects <i class="fas fa-arrow-right ml-2"></i></a>
+                        <a href="#contact" class="inline-block px-6 py-3 rounded-full font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-gray-900">Hire Me <i class="fas fa-handshake ml-2"></i></a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center md:justify-end">
-                    <img src="./profile.jpg" alt="Yogesh Yadav Avatar" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-teal-500 shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-in-out animate-pulse-border">
+                <div class="md:w-1/2 flex justify-center md:justify-end animate-bounce">
+                    <img src="https://via.placeholder.com/320x320" alt="Tanmay Kumawat Avatar" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-teal-500 shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-20 bg-gray-800 bg-opacity-80 rounded-xl mx-auto max-w-6xl my-12 shadow-2xl border border-gray-700 section">
+        <section id="about" class="py-20 bg-gray-800 bg-opacity-80">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-6 gradient-text">About Me</h2>
-                <div class="max-w-3xl mx-auto leading-relaxed text-lg text-gray-400">
+                <h2 class="text-4xl font-bold mb-6 text-teal-300 animate-fade-in">About Me</h2>
+                <div class="max-w-3xl mx-auto leading-relaxed text-lg text-gray-400 animate-slide-in-up">
                     <p class="mb-4">
-                        An eager and highly motivated <strong class="gradient-text">Web Developer</strong>, currently contributing to innovative solutions at <strong class="gradient-text">The Ai Matters</strong> since May 2025.
+                        A highly motivated and enthusiastic <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">'Full Stack Developer'</strong> currently pursuing a Bachelor of Technology, set to graduate in '<strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">2025</strong>', with a strong academic record (<strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">7.0 CGPA</strong>).
                     </p>
                     <p class="mb-4">
-                        Proficient in a diverse tech stack including <strong class="gradient-text">PHP, Python, MySQL, HTML, CSS, JavaScript, and Node.js</strong>. Dedicated to building scalable backend systems, designing robust APIs, and crafting responsive, intuitive user interfaces.
+                        I bring practical experience from recent internships, including '<strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">full-stack application development using Node.js</strong> at <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">PACE INFOTECH</strong>' and '<strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">web development with HTML, CSS, and JavaScript</strong> at <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">LEARN AND BUILD</strong>'.
                     </p>
                     <p>
-                        Eager to apply strong foundational skills and collaborative spirit to contribute to impactful web development projects and grow within a dynamic team.
+                        My project portfolio, featuring an '<strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">E-commerce Site (EJS, Tailwind CSS, Node.js, MongoDB)</strong>' and an '<strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">AI-Image Enhancer (React.js, Tailwind CSS)</strong>', demonstrates my proficiency across modern frontend and backend technologies. I am eager to apply my skills and contribute to innovative development projects.
                     </p>
-                    <a href="./yogeshy.pdf" download class="inline-block mt-8 px-8 py-3 rounded-full font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 bg-teal-500 text-gray-900 hover:bg-teal-400 hover:shadow-xl">Download Resume <i class="fas fa-download ml-2"></i></a>
+                    <a href="tanmay_kumawat_resume.pdf" download class="inline-block mt-8 px-8 py-3 rounded-full font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 bg-teal-500 text-gray-900 hover:bg-teal-400">Download Resume <i class="fas fa-download ml-2"></i></a>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="py-20 bg-gray-900 bg-opacity-80 rounded-xl mx-auto max-w-6xl my-12 shadow-2xl border border-gray-700 section">
+        <section id="skills" class="py-20 bg-gray-900 bg-opacity-80">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-12 gradient-text">Technical Skills</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="skills-container">
-                    <!-- Skills will be populated by JavaScript -->
+                <h2 class="text-4xl font-bold mb-12 text-teal-300 animate-fade-in">My Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fab fa-html5 text-5xl mb-4 text-orange-500"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">HTML5</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fab fa-css3-alt text-5xl mb-4 text-blue-500"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">CSS3</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fab fa-js text-5xl mb-4 text-yellow-500"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">JavaScript</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm7.143 17.514L12 10.37L4.857 17.514 2.486 15.143 9.63 8 2.486 0.857 4.857-1.514 12 5.63 19.143-1.514 21.514 0.857 14.37 8 21.514 15.143 19.143 17.514z"></path></svg>
+                        <h3 class="text-xl font-semibold text-gray-300">Tailwind CSS</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fab fa-react text-5xl mb-4 text-cyan-400 animate-spin"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">React.js</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fab fa-node-js text-5xl mb-4 text-green-600"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">Node.js</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Expressjs.png/1200px-Expressjs.png" alt="Express.js" class="w-12 h-12 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-300">Express.js</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fas fa-database text-5xl mb-4 text-gray-400"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">SQL</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fas fa-leaf text-5xl mb-4 text-green-500"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">MongoDB</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fab fa-git-alt text-5xl mb-4 text-red-600"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">Git/GitHub</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fas fa-robot text-5xl mb-4 text-blue-500"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">AI Tools (ChatGPT, Gemini)</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" class="w-12 h-12 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-300">Postman</h3>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800">
+                        <i class="fas fa-code text-5xl mb-4 text-purple-400"></i>
+                        <h3 class="text-xl font-semibold text-gray-300">RESTful API</h3>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-20 bg-gray-800 bg-opacity-80 rounded-xl mx-auto max-w-6xl my-12 shadow-2xl border border-gray-700 section">
+        <section id="projects" class="py-20 bg-gray-800 bg-opacity-80">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-12 gradient-text">My Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="projects-container">
-                    <!-- Projects will be populated by JavaScript -->
+                <h2 class="text-4xl font-bold mb-12 text-teal-300 animate-fade-in">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                    <div class="rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] bg-gray-900">
+                        <div class="w-full h-48 bg-gradient-to-r from-teal-600 to-cyan-700 flex items-center justify-center text-white text-7xl">
+                            <i class="fas fa-user-lock"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-300">MERN Auth System</h3>
+                            <p class="mb-4 text-gray-400">A secure user authentication system with <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">email verification</strong> & <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">password reset</strong>.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300">React.js</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300">Node.js</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-purple-900 text-purple-300">Express.js</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-red-900 text-red-300">MongoDB</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-yellow-900 text-yellow-300">JWT</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-indigo-900 text-indigo-300">NodeMailer</span>
+                            </div>
+                            <div class="flex justify-center space-x-4">
+                                <a href="#" target="_blank" class="text-lg text-teal-300 hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                                <a href="https://github.com/kumawat-tanmay/MERN-Authentication" target="_blank" class="text-lg text-gray-400 hover:text-teal-300 hover:underline"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] bg-gray-900">
+                        <div class="w-full h-48 bg-gradient-to-r from-purple-700 to-blue-700 flex items-center justify-center text-white text-7xl">
+                            <i class="fas fa-shopping-bag"></i> </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-300">E-commerce Site</h3>
+                            <p class="mb-4 text-gray-400">A fully functional e-commerce platform built to demonstrate robust online shopping capabilities.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300">EJS</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300">Tailwind CSS</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-purple-900 text-purple-300">Node.js</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-red-900 text-red-300">MongoDB</span>
+                            </div>
+                            <div class="flex justify-center space-x-4">
+                                <a href="#" target="_blank" class="text-lg text-teal-300 hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                                <a href="https://github.com/kumawat-tanmay/Ecommerce" target="_blank" class="text-lg text-gray-400 hover:text-teal-300 hover:underline"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] bg-gray-900">
+                        <div class="w-full h-48 bg-gradient-to-r from-indigo-700 to-purple-800 flex items-center justify-center text-white text-7xl">
+                            <i class="fas fa-robot"></i> </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-300">AI-Image Enhancer</h3>
+                            <p class="mb-4 text-gray-400">An application utilizing AI capabilities to enhance and process images.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300">React.js</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300">Tailwind CSS</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-purple-900 text-purple-300">AI Integration</span>
+                            </div>
+                            <div class="flex justify-center space-x-4">
+                                <a href="#" target="_blank" class="text-lg text-teal-300 hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                                <a href="https://github.com/kumawat-tanmay/AI-Image-Enhancer" target="_blank" class="text-lg text-gray-400 hover:text-teal-300 hover:underline"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] bg-gray-900">
+                        <div class="w-full h-48 bg-gradient-to-r from-blue-700 to-cyan-700 flex items-center justify-center text-white text-7xl">
+                            <i class="fas fa-map-marked-alt"></i> </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-300">Real-time Location App</h3>
+                            <p class="mb-4 text-gray-400">An application providing real-time location tracking and visualization.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300">EJS</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300">Tailwind CSS</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-purple-900 text-purple-300">Node.js</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-red-900 text-red-300">Geolocation API</span>
+                            </div>
+                            <div class="flex justify-center space-x-4">
+                                <a href="#" target="_blank" class="text-lg text-teal-300 hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                                <a href="https://github.com/kumawat-tanmay/Realtime-Location-Sharing-Application" target="_blank" class="text-lg text-gray-400 hover:text-teal-300 hover:underline"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] bg-gray-900">
+                        <div class="w-full h-48 bg-gradient-to-r from-red-700 to-orange-700 flex items-center justify-center text-white text-7xl">
+                            <i class="fas fa-music"></i> </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-3 text-gray-300">Music Player</h3>
+                            <p class="mb-4 text-gray-400">A simple and intuitive music player application built for an enhanced user experience.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300">HTML</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300">CSS</span>
+                                <span class="px-3 py-1 rounded-full text-sm font-medium bg-purple-900 text-purple-300">JavaScript</span>
+                            </div>
+                            <div class="flex justify-center space-x-4">
+                                <a href="#" target="_blank" class="text-lg text-teal-300 hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
+                                <a href="https://github.com/kumawat-tanmay/Music-Player" target="_blank" class="text-lg text-gray-400 hover:text-teal-300 hover:underline"><i class="fab fa-github mr-1"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="py-20 bg-gray-900 bg-opacity-80 rounded-xl mx-auto max-w-6xl my-12 shadow-2xl border border-gray-700 section">
+        <section id="experience" class="py-20 bg-gray-900 bg-opacity-80">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-12 gradient-text">Experience & Internships</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto" id="experience-container">
-                    <!-- Experience will be populated by JavaScript -->
+                <h2 class="text-4xl font-bold mb-12 text-teal-300 animate-fade-in">Experience & Internships</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <div class="p-8 rounded-lg shadow-lg text-left transform hover:scale-[1.02] transition-transform duration-300 bg-gray-800">
+                        <h3 class="text-2xl font-semibold text-gray-300">Full Stack Development Intern</h3>
+                        <p class="text-lg font-medium text-gray-400">PACE INFOTECH</p>
+                        <p class="italic mb-4 text-gray-500">Jaipur, Rajasthan | July 2024 - August 2024 (45 Days)</p>
+                        <ul class="list-disc pl-5 text-gray-400">
+                            <li>Developed <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">full-stack applications</strong> using <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">Node.js</strong>, aligning with the latest coding practices and industry standards.</li>
+                            <li>Gained hands-on experience in <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">database integration</strong> and <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">API development</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-8 rounded-lg shadow-lg text-left transform hover:scale-[1.02] transition-transform duration-300 bg-gray-800">
+                        <h3 class="text-2xl font-semibold text-gray-300">Web Development Intern</h3>
+                        <p class="text-lg font-medium text-gray-400">LEARN AND BUILD</p>
+                        <p class="italic mb-4 text-gray-500">Jaipur, Rajasthan | June 2022 - June 2022 (30 Days)</p>
+                        <ul class="list-disc pl-5 text-gray-400">
+                            <li>Developed <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">web applications</strong> using <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">HTML, CSS, and JavaScript</strong>.</li>
+                            <li>Focused on creating <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">responsive</strong> and <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">user-friendly interfaces</strong>.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="education" class="py-20 bg-gray-800 bg-opacity-80 rounded-xl mx-auto max-w-6xl my-12 shadow-2xl border border-gray-700 section">
+        <section id="education" class="py-20 bg-gray-800 bg-opacity-80">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-12 gradient-text">Education</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto" id="education-container">
-                    <!-- Education will be populated by JavaScript -->
+                <h2 class="text-4xl font-bold mb-12 text-teal-300 animate-fade-in">Education</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    <div class="p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-gray-900">
+                        <h3 class="text-xl font-semibold text-gray-300">Bachelor of Technology</h3>
+                        <p class="font-medium text-gray-400">POORNIMA COLLEGE OF ENGINEERING</p>
+                        <p class="italic mt-1 text-gray-500">JAIPUR, RAJASTHAN | Graduating <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">2025</strong></p>
+                        <p class="mt-2 text-gray-400">CGPA: <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">7.0</strong></p>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-gray-900">
+                        <h3 class="text-xl font-semibold text-gray-300">12th Grade</h3>
+                        <p class="font-medium text-gray-400">INDO BHARAT INTERNATIONAL SCHOOL</p>
+                        <p class="italic mt-1 text-gray-500">JAIPUR, RAJASTHAN | <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">2021</strong></p>
+                        <p class="mt-2 text-gray-400">Percentage: <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">69%</strong></p>
+                    </div>
+                    <div class="p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-gray-900">
+                        <h3 class="text-xl font-semibold text-gray-300">10th Grade</h3>
+                        <p class="font-medium text-gray-400">INDO BHARAT INTERNATIONAL SCHOOL</p>
+                        <p class="italic mt-1 text-gray-500">JAIPUR, RAJASTHAN | <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">2019</strong></p>
+                        <p class="mt-2 text-gray-400">Percentage: <strong class="bg-gradient-to-r from-teal-400 via-lime-400 to-cyan-400 bg-clip-text text-transparent">62%</strong></p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-20 text-white bg-gradient-to-r from-blue-700 to-purple-800 rounded-xl mx-auto max-w-6xl my-12 shadow-2xl border border-gray-700 section">
+        <section id="contact" class="py-20 text-white bg-gradient-to-r from-blue-700 to-purple-800">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
-                <p class="text-lg mb-8 max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6 animate-fade-in">Get In Touch</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up">
                     Have a project in mind or just want to chat? Feel free to reach out!
                 </p>
                 <div class="flex flex-wrap justify-center gap-8 mb-12">
-                    <a href="mailto:yogeshpvt04@gmail.com" class="p-5 rounded-lg shadow-lg flex flex-col items-center space-y-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl bg-blue-600 hover:bg-blue-700">
+                    <a href="mailto:tanmaymk03@gmail.com" class="p-5 rounded-lg shadow-lg flex items-center space-x-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl bg-blue-600 hover:bg-blue-700">
                         <i class="fas fa-envelope text-3xl"></i>
-                        <span class="text-xl font-semibold">yogeshpvt04@gmail.com</span>
+                        <span class="text-xl font-semibold">tanmaymk03@gmail.com</span>
                     </a>
-                    <a href="tel:+918279060252" class="p-5 rounded-lg shadow-lg flex flex-col items-center space-y-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl bg-blue-600 hover:bg-blue-700">
+                    <a href="tel:+918949386859" class="p-5 rounded-lg shadow-lg flex items-center space-x-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl bg-blue-600 hover:bg-blue-700">
                         <i class="fas fa-phone text-3xl"></i>
-                        <span class="text-xl font-semibold">+91 8279060252</span>
+                        <span class="text-xl font-semibold">+91 8949386859</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/yogesh-yadav-b279060252/" target="_blank" class="p-5 rounded-lg shadow-lg flex flex-col items-center space-y-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl bg-blue-600 hover:bg-blue-700">
+                    <a href="https://www.linkedin.com/in/tanmay-kumawat-448201231" target="_blank" class="p-5 rounded-lg shadow-lg flex items-center space-x-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl bg-blue-600 hover:bg-blue-700">
                         <i class="fab fa-linkedin text-3xl"></i>
                         <span class="text-xl font-semibold">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/your-github-profile" target="_blank" class="p-5 rounded-lg shadow-lg flex flex-col items-center space-y-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl bg-blue-600 hover:bg-blue-700">
+                    <a href="https://github.com/kumawat-tanmay" target="_blank" class="p-5 rounded-lg shadow-lg flex items-center space-x-3 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl bg-blue-600 hover:bg-blue-700">
                         <i class="fab fa-github text-3xl"></i>
                         <span class="text-xl font-semibold">GitHub</span>
                     </a>
@@ -226,291 +324,47 @@
 
     <footer class="py-8 text-center bg-gray-800 text-white">
         <div class="container mx-auto px-6">
-            <p>&copy; <span id="current-year"></span> Yogesh Yadav. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> Tanmay Kumawat. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mt-4 text-2xl">
-                <a href="https://www.linkedin.com/in/yogesh-yadav-b279060252/" target="_blank" class="hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/your-github-profile" target="_blank" class="hover:text-gray-400 transition duration-300"><i class="fab fa-github"></i></a>
-                <a href="mailto:yogeshpvt04@gmail.com" class="hover:text-red-400 transition duration-300"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/tanmay-kumawat-448201231" target="_blank" class="hover:text-blue-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/kumawat-tanmay" target="_blank" class="hover:text-gray-400 transition duration-300"><i class="fab fa-github"></i></a>
+                <a href="mailto:tanmaymk03@gmail.com" class="hover:text-red-400 transition duration-300"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
-        // GSAP Plugins
-        gsap.registerPlugin(ScrollTrigger);
+        // Hamburger menu functionality
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
-        // Data for sections (Yogesh Yadav's data)
-        const skillsData = [
-            { name: 'PHP', icon: 'fa-brands fa-php' },
-            { name: 'Python', icon: 'fa-brands fa-python' },
-            { name: 'JavaScript', icon: 'fa-brands fa-js' },
-            { name: 'Node.js', icon: 'fa-brands fa-node-js' },
-            { name: 'Express.js', icon: 'fa-solid fa-server' },
-            { name: 'HTML', icon: 'fa-brands fa-html5' },
-            { name: 'CSS', icon: 'fa-brands fa-css3-alt' },
-            { name: 'Tailwind CSS', icon: 'fa-brands fa-css3-alt' },
-            { name: 'MySQL', icon: 'fa-solid fa-database' },
-            { name: 'MongoDB', icon: 'fa-solid fa-database' },
-            { name: 'Git', icon: 'fa-brands fa-git-alt' },
-            { name: 'VS Code', icon: 'fa-solid fa-tools' },
-            { name: 'RESTful APIs', icon: 'fa-solid fa-code' },
-            { name: 'ChatGPT/Gemini/Copilot', icon: 'fa-solid fa-star' },
-        ];
-
-        const projectsData = [
-            {
-                title: 'Real-Time Chat Application',
-                description: 'Engineered a dynamic, real-time chat application featuring instant messaging, secure user authentication, and persistent message storage. Utilized Node.js and Socket.IO for high-speed WebSocket communication, ensuring low-latency message delivery, and integrated with MongoDB for flexible and scalable data management.',
-                technologies: ['Node.js', 'Socket.IO', 'MongoDB'],
-                icon: 'fa-solid fa-comments',
-                github: 'https://github.com/your-chat-app-repo', // Placeholder, please update
-                liveDemo: '#', // Placeholder, please update
-            },
-            {
-                title: 'Hotel Management System',
-                description: 'Designed and implemented a comprehensive web-based hotel management system to automate and streamline room bookings, guest check-ins/check-outs, and administrative tasks. Leveraged Node.js for robust backend logic and SQL (MySQL) for efficient relational database management, significantly enhancing operational efficiency.',
-                technologies: ['Node.js', 'MySQL'],
-                icon: 'fa-solid fa-hotel',
-                github: 'https://github.com/your-hotel-repo', // Placeholder, please update
-                liveDemo: '#', // Placeholder, please update
-            },
-            {
-                title: 'Spotify Clone',
-                description: 'Engineered a full-stack replica of a music streaming platform, showcasing proficiency in both appealing frontend UI/UX and complex backend API integration. Replicated core functionalities including music playback, playlist creation, user management, and search, using HTML, CSS, JavaScript, and Node.js.',
-                technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js'],
-                icon: 'fa-solid fa-music',
-                github: 'https://github.com/your-spotify-repo', // Placeholder, please update
-                liveDemo: '#', // Placeholder, please update
-            },
-            {
-                title: 'Music Player',
-                description: 'Built an interactive web-based music player application with essential features such as audio playback controls, dynamic playlist management, and song loading. Implemented using HTML, CSS, and JavaScript, with a strong focus on creating an intuitive user interface and smooth media handling.',
-                technologies: ['HTML', 'CSS', 'JavaScript'],
-                icon: 'fa-solid fa-play-circle',
-                github: 'https://github.com/your-music-player-repo', // Placeholder, please update
-                liveDemo: '#', // Placeholder, please update
-            },
-        ];
-
-        const experienceData = [
-            {
-                title: 'Web Developer',
-                company: 'The Ai Matters',
-                duration: 'May 2025 - Present',
-                location: 'Jaipur, Rajasthan',
-                description: [
-                    'Commenced role as a Web Developer, actively contributing to the development and maintenance of web applications utilizing PHP, Python, HTML, CSS, JavaScript, and MySQL.',
-                    'Assisting in the implementation of backend functionalities using PHP and Python, focusing on database interactions and logical operations with MySQL.',
-                    'Engaging in frontend development tasks, focusing on creating responsive and user-friendly interfaces with HTML, CSS, and JavaScript.',
-                    "Familiarizing with the company's existing codebase and development workflows, participating in initial project setups and contributing to minor feature enhancements.",
-                    'Collaborating with senior developers and team members on various development tasks to learn best practices and contribute effectively to project goals.',
-                ],
-            },
-            {
-                title: 'Backend Web Development Intern',
-                company: 'Learn And Build',
-                duration: 'Summer 2024 (45 days)',
-                location: 'Mansarover, Jaipur',
-                description: [
-                    'Gained practical expertise in backend development, specifically utilizing the Node.js framework to build server-side applications and understand server-client communication.',
-                    'Focused on implementing core backend logic and understanding API architecture, contributing to functional prototypes for various web services.',
-                    'Assisted in integrating and managing databases with web applications, learning fundamental principles of data flow and storage.',
-                ],
-            },
-            {
-                title: 'Full Stack Web Development Intern',
-                company: 'Learn And Build',
-                duration: 'Summer 2022 (30 days)',
-                location: 'Mansarover, Jaipur',
-                description: [
-                    'Contributed to the full software development lifecycle, from initial client requirements gathering to final deployment, gaining end-to-end project exposure.',
-                    'Developed both frontend (HTML, CSS, JavaScript) and backend components for web applications, solidifying a holistic understanding of web development.',
-                    'Enhanced communication and teamwork skills by actively collaborating across frontend and backend development teams to ensure seamless integration.',
-                ],
-            },
-        ];
-
-        const educationData = [
-            {
-                degree: 'Bachelor of Technology',
-                institution: 'Poornima College of Engineering, Jaipur',
-                year: '2021-2025',
-                grade: '8 CGPA',
-                location: 'Jaipur, Rajasthan' // Added location for consistency
-            },
-            {
-                degree: '12th RBSE',
-                institution: 'Adarsh Public Sr. Sec. School, Sikar',
-                year: '2019',
-                grade: '89.80%',
-                location: 'Sikar, Rajasthan' // Added location for consistency
-            },
-            {
-                degree: '10th RBSE',
-                institution: 'Shiva Montesarry Public Sr. Sec. School, Sikar',
-                year: '2017',
-                grade: '84.17%',
-                location: 'Sikar, Rajasthan' // Added location for consistency
-            },
-        ];
-
-        // Function to populate skills
-        function populateSkills() {
-            const container = document.getElementById('skills-container');
-            skillsData.forEach(skill => {
-                const skillDiv = document.createElement('div');
-                // Added hover:shadow-teal-500/50 for color matching
-                skillDiv.className = 'p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-teal-500/50 bg-gray-800';
-                skillDiv.innerHTML = `
-                    <i class="${skill.icon} text-5xl mb-4 text-teal-400"></i>
-                    <h3 class="text-xl font-semibold text-gray-300">${skill.name}</h3>
-                `;
-                container.appendChild(skillDiv);
-            });
-        }
-
-        // Function to populate projects
-        function populateProjects() {
-            const container = document.getElementById('projects-container');
-            projectsData.forEach(project => {
-                const projectDiv = document.createElement('div');
-                // Added hover:shadow-teal-500/50 for color matching
-                projectDiv.className = 'rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-teal-500/50 bg-gray-900';
-                projectDiv.innerHTML = `
-                    <div class="w-full h-48 bg-gradient-to-r from-teal-600 to-cyan-700 flex items-center justify-center text-white text-7xl">
-                        <i class="${project.icon}"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-3 text-gray-300">${project.title}</h3>
-                        <p class="mb-4 text-gray-400">${project.description}</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            ${project.technologies.map(tech => `<span class="px-3 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300">${tech}</span>`).join('')}
-                        </div>
-                        <div class="flex justify-center space-x-4">
-                            <a href="${project.liveDemo}" target="_blank" class="text-lg text-teal-300 hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a>
-                            <a href="${project.github}" target="_blank" class="text-lg text-gray-400 hover:text-teal-300 hover:underline"><i class="fab fa-github mr-1"></i> GitHub</a>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(projectDiv);
-            });
-        }
-
-        // Function to populate experience
-        function populateExperience() {
-            const container = document.getElementById('experience-container');
-            experienceData.forEach(exp => {
-                const expDiv = document.createElement('div');
-                // Added hover:shadow-teal-500/50 for color matching
-                expDiv.className = 'p-8 rounded-lg shadow-lg text-left transform hover:scale-[1.02] transition-transform duration-300 bg-gray-800 hover:shadow-xl hover:shadow-teal-500/50';
-                expDiv.innerHTML = `
-                    <h3 class="text-2xl font-semibold text-gray-300">${exp.title}</h3>
-                    <p class="text-lg font-medium text-gray-400">${exp.company}</p>
-                    <p class="italic mb-4 text-gray-500">${exp.location} | ${exp.duration}</p>
-                    <ul class="list-disc pl-5 text-gray-400">
-                        ${exp.description.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                `;
-                container.appendChild(expDiv);
-            });
-        }
-
-        // Function to populate education
-        function populateEducation() {
-            const container = document.getElementById('education-container');
-            educationData.forEach(edu => {
-                const eduDiv = document.createElement('div');
-                // Added hover:shadow-teal-500/50 for color matching
-                eduDiv.className = 'p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-teal-500/50 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900';
-                eduDiv.innerHTML = `
-                    <h3 class="text-xl font-semibold text-gray-300">${edu.degree}</h3>
-                    <p class="font-medium text-gray-400">${edu.institution}</p>
-                    <p class="italic mt-1 text-gray-500">${edu.location} | ${edu.year}</p>
-                    <p class="mt-2 text-gray-400">CGPA/Percentage: <strong class="gradient-text">${edu.grade}</strong></p>
-                `;
-                container.appendChild(eduDiv);
-            });
-        }
-
-        // Scroll to section function
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
+        hamburgerMenu.addEventListener('click', () => {
             mobileMenu.classList.toggle('max-h-0');
-            mobileMenu.classList.toggle('max-h-screen');
-        }
-
-        // GSAP Animations and ScrollTrigger setup
-        document.addEventListener('DOMContentLoaded', () => {
-            // Populate dynamic content
-            populateSkills();
-            populateProjects();
-            populateExperience();
-            populateEducation();
-
-            // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Hamburger menu functionality
-            const hamburgerMenu = document.getElementById('hamburger-menu');
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-
-            hamburgerMenu.addEventListener('click', toggleMobileMenu);
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', toggleMobileMenu); // Close menu on link click
-            });
-
-            // Hero section animation
-            gsap.from('.hero-content > *', {
-                opacity: 0,
-                y: 80,
-                stagger: 0.2,
-                duration: 1.2,
-                ease: 'power3.out',
-            });
-
-            // Section scroll animations
-            document.querySelectorAll('.section').forEach((section) => {
-                gsap.fromTo(
-                    section,
-                    { opacity: 0, y: 120 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1.2,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top 75%',
-                            end: 'bottom 25%',
-                            toggleActions: 'play none none reverse',
-                            onEnter: () => updateActiveNavItem(section.id),
-                            onEnterBack: () => updateActiveNavItem(section.id),
-                        },
-                    }
-                );
-            });
-
-            // Navbar active state update on scroll
-            function updateActiveNavItem(currentSectionId) {
-                document.querySelectorAll('.nav-item').forEach(item => {
-                    if (item.dataset.target === currentSectionId) {
-                        item.classList.add('gradient-text');
-                        item.classList.remove('text-gray-400');
-                    } else {
-                        item.classList.remove('gradient-text');
-                        item.classList.add('text-gray-400');
-                    }
-                });
-            }
-
-            // Initial active state for home section
-            updateActiveNavItem('hero'); // Changed to 'hero' to match the provided code's ID
+            mobileMenu.classList.toggle('max-h-screen'); // Adjust max-h-screen as needed for content
         });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('max-h-screen');
+                mobileMenu.classList.add('max-h-0');
+            });
+        });
+
+        // Header scroll effect
+        const mainHeader = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainHeader.classList.add('bg-gray-900', 'shadow-md', 'bg-opacity-95'); // Added darker header on scroll
+                mainHeader.classList.remove('bg-opacity-70');
+            } else {
+                mainHeader.classList.remove('bg-gray-900', 'shadow-md', 'bg-opacity-95');
+                mainHeader.classList.add('bg-opacity-70');
+            }
+        });
+
+        // Dynamic copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
