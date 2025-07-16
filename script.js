@@ -1,37 +1,29 @@
-// Typewriter Animation
-new Typed('#typed', {
-  strings: ['Web Developer', 'Backend Engineer', 'Frontend Expert', 'Full Stack Coder'],
-  typeSpeed: 60,
-  backSpeed: 40,
-  loop: true
-});
-
-// Scroll Animations
-AOS.init({
-  duration: 800,
-  offset: 100,
-  once: true
-});
-
-// Particles Background
-tsParticles.load("tsparticles", {
-  fullScreen: { enable: false },
-  particles: {
-    number: { value: 60 },
-    size: { value: 3 },
-    color: { value: "#38bdf8" },
-    links: {
-      enable: true,
-      color: "#8b5cf6",
-      opacity: 0.4
-    },
-    move: {
-      enable: true,
-      speed: 1,
-      direction: "none"
+// 💡 Smooth scroll for navbar links
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  },
-  background: {
-    color: "transparent"
-  }
+  });
 });
+
+// 💡 Load Projects Dynamically (if not already inline in projects.js)
+if (typeof projects !== "undefined") {
+  const container = document.getElementById("project-list");
+  container.innerHTML = "";
+
+  projects.forEach((project) => {
+    const el = document.createElement("div");
+    el.classList.add("project-card");
+    el.innerHTML = `
+      <h4 class="text-xl font-semibold mb-2 text-teal-300">${project.title}</h4>
+      <p class="text-sm text-gray-300 mb-2">${project.description}</p>
+      <p class="text-sm text-gray-400 mb-2"><strong>Tech:</strong> ${project.tech.join(", ")}</p>
+      <a href="${project.demo}" target="_blank" class="text-teal-400 text-sm mr-4">Live Demo</a>
+      <a href="${project.github}" target="_blank" class="text-teal-400 text-sm">GitHub</a>
+    `;
+    container.appendChild(el);
+  });
+}
