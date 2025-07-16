@@ -1,24 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-  AOS.init({ duration: 1000, once: true });
+// Scroll reveal animation
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  for (let el of reveals) {
+    const windowHeight = window.innerHeight;
+    const revealTop = el.getBoundingClientRect().top;
+    const revealPoint = 150;
 
-  const toggle = document.getElementById("themeToggle");
-  const body = document.getElementById("body");
-
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("bg-gray-100");
-    body.classList.toggle("bg-gray-900");
-    body.classList.toggle("text-white");
-    body.classList.toggle("text-gray-800");
-  });
-
-  const progressBar = document.createElement("div");
-  progressBar.id = "scroll-progress";
-  document.body.appendChild(progressBar);
-
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrolled = (scrollTop / docHeight) * 100;
-    progressBar.style.width = `${scrolled}%`;
-  });
+    if (revealTop < windowHeight - revealPoint) {
+      el.classList.add("active");
+    }
+  }
 });
