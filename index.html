@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 transition duration-300" id="body">
 
-  <!-- Theme Toggle -->
+  <!-- Dark Mode Toggle -->
   <div class="fixed top-4 right-4 z-50">
     <button id="themeToggle" class="bg-white border border-gray-400 px-3 py-2 rounded shadow hover:shadow-md">Toggle Dark Mode</button>
   </div>
@@ -19,32 +18,42 @@
   <!-- Navigation -->
   <nav class="fixed top-0 w-full bg-white shadow z-40 p-4 flex justify-center space-x-6 text-sm md:text-base">
     <a href="#hero">Home</a>
-    <a href="#about">About</a>
+    <a href="#profile">Profile</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#education">Education</a>
-    <a href="#languages">Languages</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <!-- Hero -->
-  <section class="hero pt-24" id="hero">
+  <section class="hero pt-28" id="hero">
     <div class="text-center" data-aos="fade-up">
       <h1 class="hero-title">Yogesh Yadav</h1>
       <p class="hero-subtitle">Web Developer | PHP | Python | Node.js</p>
       <div class="hero-buttons">
         <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="assets/resume.pdf" target="_blank" class="btn-secondary">Download Resume</a>
+        <a href="yogeshy.pdf" target="_blank" class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold rounded shadow hover:shadow-lg transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          Download Resume
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="container" data-aos="fade-right">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-text">An eager and highly motivated Web Developer, currently contributing to innovative solutions at <a href="https://test.theaimatters.com" class="text-blue-600 underline" target="_blank">The Ai Matters</a>. Proficient in PHP, Python, MySQL, HTML, CSS, JavaScript, and Node.js. Passionate about building scalable backend systems, APIs, and intuitive interfaces.</p>
+  <!-- Profile -->
+  <section class="section bg-white" id="profile">
+    <div class="container grid md:grid-cols-2 items-center gap-8" data-aos="fade-up">
+      <div class="flex justify-center">
+        <img src="https://via.placeholder.com/250" alt="Yogesh Yadav" class="rounded-full w-60 h-60 object-cover shadow-md" />
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold mb-2">Hello, I'm Yogesh 👋</h2>
+        <p class="text-lg leading-relaxed mb-4">I’m a passionate full-stack developer from Jaipur. Skilled in PHP, Python, Node.js, and modern web technologies. Currently working at <a href="https://test.theaimatters.com" class="text-blue-600 underline" target="_blank">The Ai Matters</a>.</p>
+        <a href="#contact" class="btn-primary">Let’s Connect</a>
+      </div>
     </div>
   </section>
 
@@ -53,8 +62,8 @@
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">Technical Skills</h2>
       <ul class="skills-grid">
-        <li>PHP</li><li>Python</li><li>JavaScript</li><li>Node.js</li><li>Express.js</li><li>MySQL</li>
-        <li>MongoDB</li><li>HTML/CSS</li><li>Tailwind CSS</li><li>REST APIs</li><li>Git & VS Code</li><li>ChatGPT, Copilot</li>
+        <li>PHP</li><li>Python</li><li>JavaScript</li><li>Node.js</li><li>MySQL</li><li>MongoDB</li>
+        <li>Express.js</li><li>HTML/CSS</li><li>Tailwind CSS</li><li>REST APIs</li><li>Git & GitHub</li><li>ChatGPT, Copilot</li>
       </ul>
     </div>
   </section>
@@ -64,9 +73,9 @@
     <div class="container" data-aos="fade-left">
       <h2 class="section-title">Experience</h2>
       <ul class="section-list">
-        <li><strong>The Ai Matters (May 2025 – Present)</strong> – Web Developer<br>Full-stack solutions using PHP, Python, and MySQL.</li>
-        <li><strong>Learn And Build (Summer 2024)</strong> – Backend Intern<br>Built backend logic with Node.js and integrated APIs.</li>
-        <li><strong>Learn And Build (Summer 2022)</strong> – Full Stack Intern<br>Frontend and backend development modules.</li>
+        <li><strong>The Ai Matters (2025–Present)</strong> – Full-stack Developer</li>
+        <li><strong>Learn And Build (2024)</strong> – Backend Intern</li>
+        <li><strong>Learn And Build (2022)</strong> – Full Stack Intern</li>
       </ul>
     </div>
   </section>
@@ -76,25 +85,13 @@
     <div class="container" data-aos="fade-up">
       <div class="flex justify-between items-center mb-4">
         <h2 class="section-title">Projects</h2>
-        <a href="#contact" class="text-sm text-blue-600 underline">Want to collaborate on a new project?</a>
+        <a href="#contact" class="text-sm text-blue-600 underline">Want to collaborate?</a>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold mb-2">Real-Time Chat App</h3>
-          <p>Node.js + Socket.IO, MongoDB, secure messaging with live updates.</p>
-        </div>
-        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold mb-2">Hotel Management System</h3>
-          <p>Automated bookings and admin tasks using Node.js and MySQL.</p>
-        </div>
-        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold mb-2">Spotify Clone</h3>
-          <p>Music streaming web app built using full-stack technologies.</p>
-        </div>
-        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold mb-2">Music Player</h3>
-          <p>Interactive music player with playlist control using HTML, CSS, JS.</p>
-        </div>
+        <div class="project-card"><h3>Real-Time Chat App</h3><p>Node.js + Socket.IO + MongoDB</p></div>
+        <div class="project-card"><h3>Hotel Management System</h3><p>Node.js + MySQL based admin dashboard</p></div>
+        <div class="project-card"><h3>Spotify Clone</h3><p>Streaming UI with playlist and search</p></div>
+        <div class="project-card"><h3>Music Player</h3><p>Custom HTML/CSS/JS-based player</p></div>
       </div>
     </div>
   </section>
@@ -104,28 +101,20 @@
     <div class="container" data-aos="fade-right">
       <h2 class="section-title">Education</h2>
       <ul class="section-list">
-        <li>B.Tech – Poornima College of Engineering, Jaipur (2021–2025) | CGPA: 8</li>
-        <li>12th RBSE – Adarsh Public Sr. Sec. School, Sikar | 89.80%</li>
-        <li>10th RBSE – Shiva Montesarry Sr. Sec. School, Sikar | 84.17%</li>
+        <li>B.Tech – Poornima College, Jaipur (2021–2025)</li>
+        <li>12th RBSE – Sikar | 89.80%</li>
+        <li>10th RBSE – Sikar | 84.17%</li>
       </ul>
     </div>
   </section>
 
-  <!-- Languages -->
-  <section class="section bg-gray-200" id="languages">
-    <div class="container" data-aos="fade-left">
-      <h2 class="section-title">Languages</h2>
-      <p>Hindi (Native), English (Fluent)</p>
-    </div>
-  </section>
-
   <!-- Contact -->
-  <section class="section" id="contact">
+  <section class="section bg-gray-200" id="contact">
     <div class="container text-center" data-aos="fade-up">
       <h2 class="section-title">Contact</h2>
       <p>Email: <a href="mailto:yogeshpvt04@gmail.com" class="text-blue-600">yogeshpvt04@gmail.com</a></p>
       <p>Phone: 8279060252</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/yogesh-yadav-833b532a5" target="_blank" class="text-blue-600">View Profile</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yogesh-yadav-833b532a5" class="text-blue-600" target="_blank">View Profile</a></p>
     </div>
   </section>
 
