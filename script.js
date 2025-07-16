@@ -53,10 +53,3 @@ const navMenu = document.getElementById("navMenu");
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("show");
 });
-
-// Close menu on link click (optional for smooth UX)
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("show");
-  });
-});
