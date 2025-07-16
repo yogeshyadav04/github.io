@@ -1,43 +1,22 @@
-/* Fade-in animation for sections */
+/* FadeIn Section Animation */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 .animate-fadeIn {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
 }
 
-/* Glowing border for profile picture */
+/* Glowing Profile */
 @keyframes profileGlow {
   0% { box-shadow: 0 0 10px #9333ea; }
-  100% { box-shadow: 0 0 25px #f472b6; }
+  100% { box-shadow: 0 0 30px #f472b6; }
 }
 .animate-profileGlow {
-  animation: profileGlow 2s infinite alternate;
+  animation: profileGlow 2.5s infinite alternate;
 }
 
-/* Pulse effect for gradient headings */
+/* Pulse for Gradient Headings */
 @keyframes pulseGradient {
   0% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.85; transform: scale(1.02); }
-  100% { opacity: 1; transform: scale(1); }
-}
-.animate-pulse {
-  animation: pulseGradient 1.8s ease-in-out infinite;
-}
-
-/* Smooth hover scale effect for cards */
-.hover-scale:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-/* Responsive tweaks for small screens */
-@media screen and (max-width: 640px) {
-  h1, h2 {
-    font-size: 1.5rem;
-  }
-  .project-card, input, textarea, button {
-    font-size: 0.9rem;
-  }
-}
+  50% { opacity: 0.85; transform: scale(1.02
