@@ -114,10 +114,9 @@ ul {
 .hero p {
   font-size: 1.2rem;
   margin-top: 1rem;
-   background: linear-gradient(to right, #007bff, #00c2ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+    font-weight: bold;
+  color: #007bff;
+  text-shadow: 0 0 8px #00bfff, 0 0 15px #00c2ff;
 }
 }
 .btn {
