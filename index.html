@@ -18,10 +18,10 @@
         body {
             font-family: 'Inter', sans-serif; /* Keeping Inter as per earlier request */
             overflow-x: hidden; /* Prevent horizontal scroll due to animations */
-            background: linear-gradient(to bottom right, #1a202c, #10192e); /* Dark gradient background */
+            background: linear-gradient(to bottom right, #1a202c, #10192e); /* Dark gradient background from user's provided code */
         }
 
-        /* Gradient Text Class (adapted to new color scheme) */
+        /* Gradient Text Class (adapted to new color scheme from user's provided code) */
         .gradient-text {
             background-image: linear-gradient(to right, #2dd4bf, #a7f3d0, #67e8f9); /* Teal, Lime, Cyan */
             -webkit-background-clip: text;
@@ -56,7 +56,7 @@
             animation-delay: 4s;
         }
 
-        /* Pulse animation for profile picture border */
+        /* Pulse animation for profile picture border (adapted to new color scheme) */
         @keyframes pulse-border {
             0% {
                 box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7); /* Teal-300 */
@@ -87,7 +87,7 @@
             <a href="#" class="text-2xl font-bold text-teal-300">Yogesh.dev</a>
 
             <ul class="hidden md:flex space-x-8">
-                <li><button onclick="scrollToSection('home')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="home">Home</button></li>
+                <li><button onclick="scrollToSection('hero')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="hero">Home</button></li>
                 <li><button onclick="scrollToSection('about')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="about">About</button></li>
                 <li><button onclick="scrollToSection('skills')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="skills">Skills</button></li>
                 <li><button onclick="scrollToSection('projects')" class="nav-item font-medium text-gray-400 hover:text-teal-300 transition duration-300" data-target="projects">Projects</button></li>
@@ -102,7 +102,7 @@
 
         <div id="mobile-menu" class="md:hidden py-4 transition-all duration-300 ease-in-out max-h-0 overflow-hidden bg-gray-800 bg-opacity-95">
             <ul class="flex flex-col items-center space-y-4">
-                <li><button onclick="scrollToSection('home'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Home</button></li>
+                <li><button onclick="scrollToSection('hero'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Home</button></li>
                 <li><button onclick="scrollToSection('about'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">About</button></li>
                 <li><button onclick="scrollToSection('skills'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Skills</button></li>
                 <li><button onclick="scrollToSection('projects'); toggleMobileMenu();" class="block font-medium py-2 px-4 text-gray-400 hover:bg-gray-700 rounded-md mobile-menu-link">Projects</button></li>
@@ -263,32 +263,32 @@
                 description: 'Engineered a dynamic, real-time chat application featuring instant messaging, secure user authentication, and persistent message storage. Utilized Node.js and Socket.IO for high-speed WebSocket communication, ensuring low-latency message delivery, and integrated with MongoDB for flexible and scalable data management.',
                 technologies: ['Node.js', 'Socket.IO', 'MongoDB'],
                 icon: 'fa-solid fa-comments',
-                github: 'https://github.com/your-chat-app-repo', // Replace with actual repo
-                liveDemo: '#', // Replace with actual live demo link
+                github: 'https://github.com/your-chat-app-repo', // Placeholder, please update
+                liveDemo: '#', // Placeholder, please update
             },
             {
                 title: 'Hotel Management System',
                 description: 'Designed and implemented a comprehensive web-based hotel management system to automate and streamline room bookings, guest check-ins/check-outs, and administrative tasks. Leveraged Node.js for robust backend logic and SQL (MySQL) for efficient relational database management, significantly enhancing operational efficiency.',
                 technologies: ['Node.js', 'MySQL'],
                 icon: 'fa-solid fa-hotel',
-                github: 'https://github.com/your-hotel-repo', // Replace with actual repo
-                liveDemo: '#', // Replace with actual live demo link
+                github: 'https://github.com/your-hotel-repo', // Placeholder, please update
+                liveDemo: '#', // Placeholder, please update
             },
             {
                 title: 'Spotify Clone',
                 description: 'Engineered a full-stack replica of a music streaming platform, showcasing proficiency in both appealing frontend UI/UX and complex backend API integration. Replicated core functionalities including music playback, playlist creation, user management, and search, using HTML, CSS, JavaScript, and Node.js.',
                 technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js'],
                 icon: 'fa-solid fa-music',
-                github: 'https://github.com/your-spotify-repo', // Replace with actual repo
-                liveDemo: '#', // Replace with actual live demo link
+                github: 'https://github.com/your-spotify-repo', // Placeholder, please update
+                liveDemo: '#', // Placeholder, please update
             },
             {
                 title: 'Music Player',
                 description: 'Built an interactive web-based music player application with essential features such as audio playback controls, dynamic playlist management, and song loading. Implemented using HTML, CSS, and JavaScript, with a strong focus on creating an intuitive user interface and smooth media handling.',
                 technologies: ['HTML', 'CSS', 'JavaScript'],
                 icon: 'fa-solid fa-play-circle',
-                github: 'https://github.com/your-music-player-repo', // Replace with actual repo
-                liveDemo: '#', // Replace with actual live demo link
+                github: 'https://github.com/your-music-player-repo', // Placeholder, please update
+                liveDemo: '#', // Placeholder, please update
             },
         ];
 
@@ -305,7 +305,6 @@
                     "Familiarizing with the company's existing codebase and development workflows, participating in initial project setups and contributing to minor feature enhancements.",
                     'Collaborating with senior developers and team members on various development tasks to learn best practices and contribute effectively to project goals.',
                 ],
-                icon: 'fa-solid fa-briefcase',
             },
             {
                 title: 'Backend Web Development Intern',
@@ -317,7 +316,6 @@
                     'Focused on implementing core backend logic and understanding API architecture, contributing to functional prototypes for various web services.',
                     'Assisted in integrating and managing databases with web applications, learning fundamental principles of data flow and storage.',
                 ],
-                icon: 'fa-solid fa-briefcase',
             },
             {
                 title: 'Full Stack Web Development Intern',
@@ -329,7 +327,6 @@
                     'Developed both frontend (HTML, CSS, JavaScript) and backend components for web applications, solidifying a holistic understanding of web development.',
                     'Enhanced communication and teamwork skills by actively collaborating across frontend and backend development teams to ensure seamless integration.',
                 ],
-                icon: 'fa-solid fa-briefcase',
             },
         ];
 
@@ -339,21 +336,21 @@
                 institution: 'Poornima College of Engineering, Jaipur',
                 year: '2021-2025',
                 grade: '8 CGPA',
-                icon: 'fa-solid fa-graduation-cap',
+                location: 'Jaipur, Rajasthan' // Added location for consistency
             },
             {
                 degree: '12th RBSE',
                 institution: 'Adarsh Public Sr. Sec. School, Sikar',
                 year: '2019',
                 grade: '89.80%',
-                icon: 'fa-solid fa-graduation-cap',
+                location: 'Sikar, Rajasthan' // Added location for consistency
             },
             {
                 degree: '10th RBSE',
                 institution: 'Shiva Montesarry Public Sr. Sec. School, Sikar',
                 year: '2017',
                 grade: '84.17%',
-                icon: 'fa-solid fa-graduation-cap',
+                location: 'Sikar, Rajasthan' // Added location for consistency
             },
         ];
 
@@ -362,7 +359,8 @@
             const container = document.getElementById('skills-container');
             skillsData.forEach(skill => {
                 const skillDiv = document.createElement('div');
-                skillDiv.className = 'p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl bg-gray-800';
+                // Added hover:shadow-teal-500/50 for color matching
+                skillDiv.className = 'p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-teal-500/50 bg-gray-800';
                 skillDiv.innerHTML = `
                     <i class="${skill.icon} text-5xl mb-4 text-teal-400"></i>
                     <h3 class="text-xl font-semibold text-gray-300">${skill.name}</h3>
@@ -376,7 +374,8 @@
             const container = document.getElementById('projects-container');
             projectsData.forEach(project => {
                 const projectDiv = document.createElement('div');
-                projectDiv.className = 'rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl bg-gray-900';
+                // Added hover:shadow-teal-500/50 for color matching
+                projectDiv.className = 'rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-teal-500/50 bg-gray-900';
                 projectDiv.innerHTML = `
                     <div class="w-full h-48 bg-gradient-to-r from-teal-600 to-cyan-700 flex items-center justify-center text-white text-7xl">
                         <i class="${project.icon}"></i>
@@ -402,7 +401,8 @@
             const container = document.getElementById('experience-container');
             experienceData.forEach(exp => {
                 const expDiv = document.createElement('div');
-                expDiv.className = 'p-8 rounded-lg shadow-lg text-left transform hover:scale-[1.02] transition-transform duration-300 bg-gray-800 hover:shadow-xl';
+                // Added hover:shadow-teal-500/50 for color matching
+                expDiv.className = 'p-8 rounded-lg shadow-lg text-left transform hover:scale-[1.02] transition-transform duration-300 bg-gray-800 hover:shadow-xl hover:shadow-teal-500/50';
                 expDiv.innerHTML = `
                     <h3 class="text-2xl font-semibold text-gray-300">${exp.title}</h3>
                     <p class="text-lg font-medium text-gray-400">${exp.company}</p>
@@ -420,7 +420,8 @@
             const container = document.getElementById('education-container');
             educationData.forEach(edu => {
                 const eduDiv = document.createElement('div');
-                eduDiv.className = 'p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-gray-900';
+                // Added hover:shadow-teal-500/50 for color matching
+                eduDiv.className = 'p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-teal-500/50 transition-all duration-300 transform hover:-translate-y-2 bg-gray-900';
                 eduDiv.innerHTML = `
                     <h3 class="text-xl font-semibold text-gray-300">${edu.degree}</h3>
                     <p class="font-medium text-gray-400">${edu.institution}</p>
@@ -438,6 +439,7 @@
 
         // Toggle mobile menu
         function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('max-h-0');
             mobileMenu.classList.toggle('max-h-screen');
         }
@@ -455,7 +457,6 @@
 
             // Hamburger menu functionality
             const hamburgerMenu = document.getElementById('hamburger-menu');
-            const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
             hamburgerMenu.addEventListener('click', toggleMobileMenu);
@@ -494,16 +495,12 @@
                 );
             });
 
-            // Skill and Project card animations (already handled by CSS hover and GSAP for initial load)
-            // No specific GSAP for individual skill bars as they are simple static elements now.
-            // The hover effects for skill/project/experience cards are handled by Tailwind's `hover:shadow-xl` and `transform hover:-translate-y-2`
-
             // Navbar active state update on scroll
             function updateActiveNavItem(currentSectionId) {
                 document.querySelectorAll('.nav-item').forEach(item => {
                     if (item.dataset.target === currentSectionId) {
                         item.classList.add('gradient-text');
-                        item.classList.remove('text-gray-400'); // Use gray-400 for inactive
+                        item.classList.remove('text-gray-400');
                     } else {
                         item.classList.remove('gradient-text');
                         item.classList.add('text-gray-400');
@@ -512,7 +509,7 @@
             }
 
             // Initial active state for home section
-            updateActiveNavItem('home');
+            updateActiveNavItem('hero'); // Changed to 'hero' to match the provided code's ID
         });
     </script>
 </body>
