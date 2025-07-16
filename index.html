@@ -7,9 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader-circle"></div>
+    <p>Launching Your Experience...</p>
+  </div>
+
+  <!-- Custom Cursor and Canvas -->
   <div class="custom-cursor"></div>
   <canvas id="bgCanvas"></canvas>
 
+  <!-- Navbar -->
   <header class="navbar glass">
     <div class="logo">Yogesh.dev</div>
     <nav>
@@ -20,79 +28,82 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button id="themeToggle">Toggle Theme</button></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Hi, I'm <span>Yogesh Yadav</span></h1>
+  <!-- Hero Section -->
+  <section class="hero reveal">
+    <h1 class="typewriter">Hi, I'm <span>Yogesh Yadav</span></h1>
     <p>Web Developer | Backend Specialist | Creative Technologist</p>
     <a href="yogeshy.pdf" class="btn glass" download>Download Resume</a>
   </section>
 
+  <!-- About Section -->
   <section id="about" class="card glass reveal">
     <h2>About Me</h2>
     <p>
-      A passionate and driven web developer based in Jaipur with professional experience at <strong>The Ai Matters</strong>. I build scalable backend systems and craft responsive interfaces using technologies like PHP, Python, JavaScript, Node.js, and MySQL. I love learning, building, and solving real-world problems through code.
+      A passionate web developer based in Jaipur with experience at <strong>The Ai Matters</strong>. I specialize in building scalable web systems using PHP, Python, JavaScript, Node.js, and databases like MySQL and MongoDB.
     </p>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills" class="card glass reveal">
     <h2>Technical Skills</h2>
     <ul class="skills-list">
       <li>PHP</li><li>Python</li><li>JavaScript</li><li>Node.js</li><li>Express.js</li><li>MongoDB</li>
       <li>MySQL</li><li>HTML</li><li>CSS</li><li>Tailwind CSS</li><li>Git</li><li>REST APIs</li>
-      <li>VS Code</li><li>ChatGPT</li><li>Gemini</li><li>GitHub Copilot</li>
+      <li>VS Code</li><li>GitHub Copilot</li><li>ChatGPT</li><li>Gemini</li>
     </ul>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="card glass reveal">
     <h2>Projects</h2>
     <div class="project-grid">
       <div class="project">
         <h3>Real-Time Chat App</h3>
-        <p>Built using Node.js and Socket.IO for instant messaging with MongoDB storage and user authentication.</p>
+        <p>Built using Node.js and Socket.IO for live messaging and MongoDB storage.</p>
       </div>
       <div class="project">
         <h3>Hotel Management System</h3>
-        <p>Web application for managing bookings, check-ins/outs, and backend tasks using Node.js and MySQL.</p>
+        <p>Web app for managing bookings and guest info using Node.js and MySQL.</p>
       </div>
       <div class="project">
         <h3>Spotify Clone</h3>
-        <p>Full-stack music streaming app with playback, search, playlist features, and Node.js API integration.</p>
+        <p>Music streaming web app with playback, playlists, and API using Node.js.</p>
       </div>
       <div class="project">
         <h3>Interactive Music Player</h3>
-        <p>Web-based music player using HTML/CSS/JS with clean audio controls and animated playlist UI.</p>
+        <p>Front-end player with custom UI, animations and pure JS functionality.</p>
       </div>
     </div>
   </section>
 
+  <!-- Experience Section -->
   <section id="experience" class="card glass reveal">
     <h2>Professional Experience</h2>
-    <p><strong>The Ai Matters</strong> (May 2025 – Present) – Web Developer<br>
-    • Backend in PHP & Python, DB with MySQL<br>
-    • UI/UX using HTML, CSS, JS<br>
-    • Team collaboration for bug fixes and features</p>
-
+    <p><strong>The Ai Matters</strong> – Web Developer (2025–Present)<br>
+      • Backend using PHP & Python<br>
+      • UI development with HTML, CSS, JS<br>
+      • Collaborative team projects, bug fixing and deployment</p>
     <p><strong>Backend Intern – Learn And Build (2024)</strong><br>
-    • API building with Node.js<br>
-    • Server-client logic and DB connection</p>
-
+      • API & server logic using Node.js<br>
+      • Worked with databases and real-time logic</p>
     <p><strong>Full Stack Intern – Learn And Build (2022)</strong><br>
-    • Full lifecycle project experience<br>
-    • Built frontend and backend, learned deployment</p>
+      • Full-cycle project development<br>
+      • Frontend + backend + deployment learning</p>
   </section>
 
+  <!-- Education Section -->
   <section id="education" class="card glass reveal">
     <h2>Education</h2>
-    <p><strong>B.Tech in Computer Science</strong> – Poornima College of Engineering, Jaipur (2021–2025)<br>
-    CGPA: 8.0</p>
+    <p><strong>B.Tech in CSE</strong> – Poornima College of Engineering, Jaipur (2021–2025) – CGPA: 8.0</p>
     <p><strong>12th RBSE</strong> – Adarsh Public Sr. Sec. School, Sikar (2019) – 89.80%</p>
     <p><strong>10th RBSE</strong> – Shiva Montesarry Sr. Sec. School, Sikar (2017) – 84.17%</p>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="card glass reveal">
     <h2>Contact Me</h2>
     <p><strong>Email:</strong> <a href="mailto:yogeshpvt04@gmail.com">yogeshpvt04@gmail.com</a></p>
@@ -101,6 +112,7 @@
     <p><strong>Location:</strong> Jaipur, Rajasthan</p>
   </section>
 
+  <!-- Footer -->
   <footer class="glass">
     <p>© 2025 Yogesh Yadav — All Rights Reserved</p>
   </footer>
