@@ -6,12 +6,13 @@
   <title>Yogesh Yadav</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body onload="window.scrollTo(0, 0)">
 
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">Yogesh Yadav</div>
-    <nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav class="nav-menu" id="navMenu">
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -24,17 +25,17 @@
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section id="home" class="section hero">
     <h1>Hello, I'm <span>Yogesh Yadav</span></h1>
-    <p>Full Stack Web Developer</p>
+    <p>Full Stack Web Developer | Backend Specialist | Creative Technologist</p>
     <a href="yogeshy.pdf" class="btn" download>Download Resume</a>
   </section>
 
   <!-- About -->
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>I am a passionate full-stack developer from Jaipur with experience in building scalable backend systems and responsive frontend UIs. I’ve worked on real-world web applications using PHP, Python, Node.js, JavaScript, MySQL, and MongoDB. My focus is on delivering clean, efficient, and maintainable code with a user-first mindset. I am currently working at The Ai Matters as a Web Developer and have previously completed multiple internships in backend and full-stack development.</p>
+    <p>I am a full-stack developer from Jaipur with expertise in PHP, Python, Node.js, and modern tools. I build scalable backends and responsive UIs, currently working at The Ai Matters.</p>
   </section>
 
   <!-- Skills -->
@@ -43,8 +44,7 @@
     <ul class="skills-list">
       <li>PHP</li><li>Python</li><li>JavaScript</li><li>Node.js</li>
       <li>MySQL</li><li>MongoDB</li><li>HTML</li><li>CSS</li>
-      <li>Tailwind CSS</li><li>Git</li><li>REST API</li><li>GitHub</li>
-      <li>VS Code</li><li>ChatGPT</li><li>Gemini</li>
+      <li>Tailwind CSS</li><li>REST API</li><li>Git</li><li>GitHub</li>
     </ul>
   </section>
 
@@ -53,25 +53,25 @@
     <h2>Projects</h2>
     <div class="project-grid">
       <div class="project">
-      <h3>The Ai Matters</h3>
-      <p>Production-ready website built using full-stack technologies for a real AI solutions company.</p>
-      <a href="https://test.theaimatters.com" target="_blank">View Live</a>
-    </div>
+        <h3>The Ai Matters</h3>
+        <p>Production-ready website built using full-stack technologies.</p>
+        <a href="https://test.theaimatters.com" target="_blank">View Live</a>
+      </div>
       <div class="project">
         <h3>Real-Time Chat App</h3>
-        <p>Live chat app using Node.js, Socket.IO and MongoDB with real-time communication.</p>
+        <p>Socket.IO + Node.js chat platform with MongoDB backend.</p>
       </div>
       <div class="project">
         <h3>Hotel Management System</h3>
-        <p>Booking, admin panel and guest management using Node.js and MySQL.</p>
+        <p>Booking and admin panel using MySQL and Node.js.</p>
       </div>
       <div class="project">
         <h3>Spotify Clone</h3>
-        <p>Music streaming platform with playlist, playback, and custom UI using Node.js.</p>
+        <p>Music streaming app with playlist & search interface.</p>
       </div>
       <div class="project">
         <h3>Interactive Music Player</h3>
-        <p>Stylish frontend music player using HTML, CSS, JS with animations and transitions.</p>
+        <p>Custom frontend player with animations using JS & CSS.</p>
       </div>
     </div>
   </section>
@@ -83,34 +83,20 @@
     <ul>
       <li>Developed backend APIs using PHP and Python</li>
       <li>Built responsive UIs with HTML, CSS, JavaScript</li>
-      <li>Handled bug fixes, deployment, and version control</li>
+      <li>Version control, deployment, and optimization</li>
     </ul>
-    <p><strong>Backend Intern – Learn And Build (2024)</strong></p>
+    <p><strong>Intern – Learn And Build (2022–2024)</strong></p>
     <ul>
-      <li>Built server-side logic and APIs using Node.js and Express</li>
-      <li>Worked on database integration and performance optimization</li>
-    </ul>
-    <p><strong>Full Stack Intern – Learn And Build (2022)</strong></p>
-    <ul>
-      <li>Worked on frontend + backend logic for web applications</li>
-      <li>Learned full-cycle development process from idea to deployment</li>
+      <li>Backend with Node.js, REST APIs, frontend integrations</li>
     </ul>
   </section>
 
   <!-- Education -->
   <section id="education" class="section">
     <h2>Education</h2>
-    <p><strong>B.Tech in Computer Science</strong><br>
-    Poornima College of Engineering, Jaipur (2021 – 2025)<br>
-    CGPA: 8.0</p>
-
-    <p><strong>12th (RBSE)</strong><br>
-    Adarsh Public Sr. Sec. School, Sikar (2019)<br>
-    Percentage: 89.80%</p>
-
-    <p><strong>10th (RBSE)</strong><br>
-    Shiva Montessori Sr. Sec. School, Sikar (2017)<br>
-    Percentage: 84.17%</p>
+    <p><strong>B.Tech (CSE)</strong> – Poornima College of Engineering, Jaipur (2021–2025) | CGPA: 8.0</p>
+    <p><strong>12th (RBSE)</strong> – Adarsh Public School, Sikar | 89.80%</p>
+    <p><strong>10th (RBSE)</strong> – Shiva Montessori School, Sikar | 84.17%</p>
   </section>
 
   <!-- Contact -->
