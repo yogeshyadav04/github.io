@@ -46,17 +46,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Hamburger Toggle
+// Hamburger toggle
 const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
+const navLinks = document.getElementById("navLinks");
 
 hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
+  navLinks.classList.toggle("show");
 });
 
-// Close menu on link click
+// Close nav on link click
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
+    navLinks.classList.remove("show");
   });
 });
