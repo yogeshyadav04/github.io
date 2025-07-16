@@ -1,81 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yogesh Yadav | Professional Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogesh Yadav - Fresher Web Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom global styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+            scroll-behavior: smooth;
+        }
+
+        /* Gradient Text Class */
+        .gradient-text {
+            background-image: linear-gradient(to right, #a78bfa, #ec4899, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Blob Animation Keyframes */
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
 </head>
-<body class="bg-[#0f172a] text-white font-poppins">
+<body class="min-h-screen bg-gray-900 text-gray-100">
 
-  <!-- Navbar -->
-  <header class="bg-[#0f172a] sticky top-0 z-50 shadow-md">
-    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-teal-400">Yogesh Yadav</h1>
-      <ul class="hidden md:flex space-x-6 text-sm">
-        <li><a href="#about" class="hover:text-teal-400">About</a></li>
-        <li><a href="#skills" class="hover:text-teal-400">Skills</a></li>
-        <li><a href="#projects" class="hover:text-teal-400">Projects</a></li>
-        <li><a href="#contact" class="hover:text-teal-400">Contact</a></li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 bg-opacity-80 backdrop-blur-md p-4 shadow-lg">
+        <div class="container mx-auto flex justify-center space-x-6 md:space-x-10">
+            <button onclick="scrollToSection('home')" class="nav-item text-lg font-semibold transition-all duration-300 hover:text-purple-400 text-gray-300" data-target="home">Home</button>
+            <button onclick="scrollToSection('about')" class="nav-item text-lg font-semibold transition-all duration-300 hover:text-purple-400 text-gray-300" data-target="about">About</button>
+            <button onclick="scrollToSection('skills')" class="nav-item text-lg font-semibold transition-all duration-300 hover:text-purple-400 text-gray-300" data-target="skills">Skills</button>
+            <button onclick="scrollToSection('projects')" class="nav-item text-lg font-semibold transition-all duration-300 hover:text-purple-400 text-gray-300" data-target="projects">Projects</button>
+            <button onclick="scrollToSection('experience')" class="nav-item text-lg font-semibold transition-all duration-300 hover:text-purple-400 text-gray-300" data-target="experience">Experience</button>
+            <button onclick="scrollToSection('contact')" class="nav-item text-lg font-semibold transition-all duration-300 hover:text-purple-400 text-gray-300" data-target="contact">Contact</button>
+        </div>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 px-4 bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
-    <img src="assets/profile.jpg" class="w-32 h-32 mx-auto rounded-full border-4 border-teal-400 shadow-lg mb-4" alt="Yogesh Yadav" />
-    <h2 class="text-4xl font-bold">Hi, I'm <span class="text-teal-400">Yogesh Yadav</span></h2>
-    <p class="mt-2 text-lg text-gray-300">Web Developer | Backend Engineer | Full Stack Enthusiast</p>
-    <div class="mt-6 space-x-4">
-      <a href="#contact" class="bg-teal-500 hover:bg-teal-600 text-white py-2 px-5 rounded-full">Hire Me</a>
-      <a href="yogeshy.pdf" download class="border border-teal-400 text-teal-300 py-2 px-5 rounded-full hover:bg-teal-600 hover:text-white">Download Resume</a>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+        <!-- Background Gradients -->
+        <div class="absolute inset-0 z-0 opacity-30">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-1/2 right-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-96 h-96 bg-red-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
 
-  <!-- About Section -->
-  <section id="about" class="max-w-5xl mx-auto px-4 py-16">
-    <h3 class="text-3xl font-semibold text-teal-400 mb-6">About Me</h3>
-    <p class="text-gray-300 leading-relaxed">
-      I am a passionate Web Developer skilled in PHP, Python, JavaScript, and modern frameworks like Node.js and Tailwind CSS. I specialize in building scalable web applications with a focus on performance and clean design. Currently working at The AI Matters and constantly learning new technologies.
-    </p>
-  </section>
+        <div class="relative z-10 text-center hero-content">
+            <div class="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-purple-500 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <img src="./profile.jpg" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 gradient-text">YOGESH YADAV</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                An eager and highly motivated <span class="gradient-text">Web Developer</span>
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/yogesh-yadav-b279060252/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                <a href="mailto:yogeshpvt04@gmail.com" class="text-gray-300 hover:text-pink-400 transition-colors duration-300 transform hover:scale-110">
+                    <i class="fas fa-envelope fa-3x"></i>
+                </a>
+                <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-red-400 transition-colors duration-300 transform hover:scale-110">
+                    <i class="fab fa-github fa-3x"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="max-w-5xl mx-auto px-4 py-16">
-    <h3 class="text-3xl font-semibold text-teal-400 mb-6">Skills</h3>
-    <div class="flex flex-wrap gap-4">
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">PHP</span>
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">Python</span>
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">JavaScript</span>
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">Node.js</span>
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">MySQL</span>
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">MongoDB</span>
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">Tailwind CSS</span>
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">HTML</span>
-      <span class="bg-[#1e293b] px-4 py-2 rounded text-sm border border-teal-500">CSS</span>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 md:px-8 bg-gray-800 section">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-10 gradient-text">About Me</h2>
+            <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-gray-300">
+                Currently contributing to innovative solutions at <span class="font-semibold text-purple-300">The Ai Matters</span> since May 2025.
+                Proficient in a diverse tech stack including <span class="font-semibold text-pink-300">PHP, Python, MySQL, HTML, CSS, JavaScript, and Node.js</span>.
+                Dedicated to building scalable backend systems, designing robust APIs, and crafting responsive, intuitive user interfaces.
+                Eager to apply strong foundational skills and collaborative spirit to contribute to impactful web development projects and grow within a dynamic team.
+            </p>
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="max-w-5xl mx-auto px-4 py-16">
-    <h3 class="text-3xl font-semibold text-teal-400 mb-6">Projects</h3>
-    <div id="project-list" class="grid md:grid-cols-2 gap-8">Loading projects...</div>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 md:px-8 bg-gray-900 section">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 gradient-text">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="skills-container">
+                <!-- Skills will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="max-w-5xl mx-auto px-4 py-16">
-    <h3 class="text-3xl font-semibold text-teal-400 mb-6">Contact Me</h3>
-    <p>Email: <a href="mailto:yogeshpvt04@gmail.com" class="text-blue-400">yogeshpvt04@gmail.com</a></p>
-    <p>Phone: 8279060252</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/yogesh-yadav-833b532a5" target="_blank" class="text-blue-400">LinkedIn Profile</a></p>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 md:px-8 bg-gray-800 section">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 gradient-text">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+                <!-- Projects will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
 
-  <footer class="text-center text-sm text-gray-500 py-6">
-    &copy; 2025 Yogesh Yadav. All rights reserved.
-  </footer>
+    <!-- Experience & Internship Section -->
+    <section id="experience" class="py-20 px-4 md:px-8 bg-gray-900 section">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 gradient-text">Experience & Education</h2>
 
-  <script src="projects.js"></script>
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold mb-6 gradient-text">Professional Experience</h3>
+                <div class="space-y-8" id="experience-container">
+                    <!-- Experience will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-3xl font-bold mb-6 gradient-text">Education</h3>
+                <div class="space-y-8" id="education-container">
+                    <!-- Education will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 md:px-8 bg-gray-800 section">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-10 gradient-text">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12 text-lg md:text-xl text-gray-300">
+                <div class="flex items-center">
+                    <i class="fas fa-envelope text-purple-400 text-3xl mr-3"></i>
+                    <span>yogeshpvt04@gmail.com</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-phone text-pink-400 text-3xl mr-3"></i>
+                    <span>+91 8279060252</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt text-red-400 text-3xl mr-3"></i>
+                    <span>Jaipur, Rajasthan</span>
+                </div>
+            </div>
+            <div class="mt-10">
+                <a href="https://www.linkedin.com/in/yogesh-yadav-b279060252/" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Yogesh Yadav. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // GSAP Plugins
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Data for sections
+        const skillsData = [
+            { name: 'PHP', icon: 'fa-brands fa-php', level: '85%' },
+            { name: 'Python', icon: 'fa-brands fa-python', level: '80%' },
+            { name: 'JavaScript', icon: 'fa-brands fa-js', level: '90%' },
+            { name: 'Node.js', icon: 'fa-brands fa-node-js', level: '85%' },
+            { name: 'Express.js', icon: 'fa-solid fa-server', level: '80%' },
+            { name: 'HTML', icon: 'fa-brands fa-html5', level: '95%' },
+            { name: 'CSS', icon: 'fa-brands fa-css3-alt', level: '90%' },
+            { name: 'Tailwind CSS', icon: 'fa-brands fa-css3-alt', level: '88%' },
+            { name: 'MySQL', icon: 'fa-solid fa-database', level: '85%' },
+            { name: 'MongoDB', icon: 'fa-solid fa-database', level: '80%' },
+            { name: 'Git', icon: 'fa-brands fa-git-alt', level: '75%' },
+            { name: 'VS Code', icon: 'fa-solid fa-tools', level: '90%' },
+            { name: 'RESTful APIs', icon: 'fa-solid fa-code', level: '85%' },
+            { name: 'ChatGPT/Gemini/Copilot', icon: 'fa-solid fa-star', level: '90%' },
+        ];
+
+        const projectsData = [
+            {
+                title: 'Real-Time Chat Application',
+                description: 'Engineered a dynamic, real-time chat application featuring instant messaging, secure user authentication, and persistent message storage. Utilized Node.js and Socket.IO for high-speed WebSocket communication, ensuring low-latency message delivery, and integrated with MongoDB for flexible and scalable data management.',
+                technologies: ['Node.js', 'Socket.IO', 'MongoDB'],
+                icon: 'fa-solid fa-project-diagram',
+            },
+            {
+                title: 'Hotel Management System',
+                description: 'Designed and implemented a comprehensive web-based hotel management system to automate and streamline room bookings, guest check-ins/check-outs, and administrative tasks. Leveraged Node.js for robust backend logic and SQL (MySQL) for efficient relational database management, significantly enhancing operational efficiency.',
+                technologies: ['Node.js', 'MySQL'],
+                icon: 'fa-solid fa-project-diagram',
+            },
+            {
+                title: 'Spotify Clone',
+                description: 'Engineered a full-stack replica of a music streaming platform, showcasing proficiency in both appealing frontend UI/UX and complex backend API integration. Replicated core functionalities including music playback, playlist creation, user management, and search, using HTML, CSS, JavaScript, and Node.js.',
+                technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js'],
+                icon: 'fa-solid fa-project-diagram',
+            },
+            {
+                title: 'Music Player',
+                description: 'Built an interactive web-based music player application with essential features such as audio playback controls, dynamic playlist management, and song loading. Implemented using HTML, CSS, and JavaScript, with a strong focus on creating an intuitive user interface and smooth media handling.',
+                technologies: ['HTML', 'CSS', 'JavaScript'],
+                icon: 'fa-solid fa-project-diagram',
+            },
+        ];
+
+        const experienceData = [
+            {
+                title: 'Web Developer',
+                company: 'The Ai Matters',
+                duration: 'May 2025 - Present',
+                location: 'Jaipur, Rajasthan',
+                description: [
+                    'Commenced role as a Web Developer, actively contributing to the development and maintenance of web applications utilizing PHP, Python, HTML, CSS, JavaScript, and MySQL.',
+                    'Assisting in the implementation of backend functionalities using PHP and Python, focusing on database interactions and logical operations with MySQL.',
+                    'Engaging in frontend development tasks, focusing on creating responsive and user-friendly interfaces with HTML, CSS, and JavaScript.',
+                    "Familiarizing with the company's existing codebase and development workflows, participating in initial project setups and contributing to minor feature enhancements.",
+                    'Collaborating with senior developers and team members on various development tasks to learn best practices and contribute effectively to project goals.',
+                ],
+                icon: 'fa-solid fa-briefcase',
+            },
+            {
+                title: 'Backend Web Development Intern',
+                company: 'Learn And Build',
+                duration: 'Summer 2024 (45 days)',
+                location: 'Mansarover, Jaipur',
+                description: [
+                    'Gained practical expertise in backend development, specifically utilizing the Node.js framework to build server-side applications and understand server-client communication.',
+                    'Focused on implementing core backend logic and understanding API architecture, contributing to functional prototypes for various web services.',
+                    'Assisted in integrating and managing databases with web applications, learning fundamental principles of data flow and storage.',
+                ],
+                icon: 'fa-solid fa-briefcase',
+            },
+            {
+                title: 'Full Stack Web Development Intern',
+                company: 'Learn And Build',
+                duration: 'Summer 2022 (30 days)',
+                location: 'Mansarover, Jaipur',
+                description: [
+                    'Contributed to the full software development lifecycle, from initial client requirements gathering to final deployment, gaining end-to-end project exposure.',
+                    'Developed both frontend (HTML, CSS, JavaScript) and backend components for web applications, solidifying a holistic understanding of web development.',
+                    'Enhanced communication and teamwork skills by actively collaborating across frontend and backend development teams to ensure seamless integration.',
+                ],
+                icon: 'fa-solid fa-briefcase',
+            },
+        ];
+
+        const educationData = [
+            {
+                degree: 'Bachelor of Technology',
+                institution: 'Poornima College of Engineering, Jaipur',
+                year: '2021-2025',
+                grade: '8 CGPA',
+                icon: 'fa-solid fa-graduation-cap',
+            },
+            {
+                degree: '12th RBSE',
+                institution: 'Adarsh Public Sr. Sec. School, Sikar',
+                year: '2019',
+                grade: '89.80%',
+                icon: 'fa-solid fa-graduation-cap',
+            },
+            {
+                degree: '10th RBSE',
+                institution: 'Shiva Montesarry Public Sr. Sec. School, Sikar',
+                year: '2017',
+                grade: '84.17%',
+                icon: 'fa-solid fa-graduation-cap',
+            },
+        ];
+
+        // Function to populate skills
+        function populateSkills() {
+            const container = document.getElementById('skills-container');
+            skillsData.forEach(skill => {
+                const skillDiv = document.createElement('div');
+                skillDiv.className = 'bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700 transform hover:-translate-y-1';
+                skillDiv.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <i class="${skill.icon} text-purple-400 text-3xl mr-4"></i>
+                        <h3 class="text-2xl font-semibold text-gray-100">${skill.name}</h3>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-3">
+                        <div class="skill-bar-fill h-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500" data-width="${skill.level}" style="width: 0%;"></div>
+                    </div>
+                    <p class="text-right text-gray-400 mt-2">${skill.level}</p>
+                `;
+                container.appendChild(skillDiv);
+            });
+        }
+
+        // Function to populate projects
+        function populateProjects() {
+            const container = document.getElementById('projects-container');
+            projectsData.forEach(project => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project-card bg-gray-900 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700 transform hover:scale-105';
+                projectDiv.innerHTML = `
+                    <i class="${project.icon} text-pink-400 text-4xl mb-4 mx-auto block"></i>
+                    <h3 class="text-2xl font-semibold text-gray-100 mb-3 text-center">${project.title}</h3>
+                    <p class="text-gray-300 mb-4 text-center">${project.description}</p>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        ${project.technologies.map(tech => `<span class="bg-purple-600 text-white text-sm px-3 py-1 rounded-full">${tech}</span>`).join('')}
+                    </div>
+                `;
+                container.appendChild(projectDiv);
+            });
+        }
+
+        // Function to populate experience
+        function populateExperience() {
+            const container = document.getElementById('experience-container');
+            experienceData.forEach(exp => {
+                const expDiv = document.createElement('div');
+                expDiv.className = 'bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 transform hover:-translate-y-1 transition-transform duration-300';
+                expDiv.innerHTML = `
+                    <div class="flex items-center mb-3">
+                        <i class="${exp.icon} text-red-400 text-2xl mr-4"></i>
+                        <div>
+                            <h4 class="text-2xl font-semibold text-gray-100">${exp.title}</h4>
+                            <p class="text-lg text-gray-300">${exp.company}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-2">${exp.duration} | ${exp.location}</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1">
+                        ${exp.description.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                `;
+                container.appendChild(expDiv);
+            });
+        }
+
+        // Function to populate education
+        function populateEducation() {
+            const container = document.getElementById('education-container');
+            educationData.forEach(edu => {
+                const eduDiv = document.createElement('div');
+                eduDiv.className = 'bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 transform hover:-translate-y-1 transition-transform duration-300';
+                eduDiv.innerHTML = `
+                    <div class="flex items-center mb-3">
+                        <i class="${edu.icon} text-green-400 text-2xl mr-4"></i>
+                        <div>
+                            <h4 class="text-2xl font-semibold text-gray-100">${edu.degree}</h4>
+                            <p class="text-lg text-gray-300">${edu.institution}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-2">${edu.year} | ${edu.grade}</p>
+                `;
+                container.appendChild(eduDiv);
+            });
+        }
+
+        // Scroll to section function
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // GSAP Animations and ScrollTrigger setup
+        document.addEventListener('DOMContentLoaded', () => {
+            // Populate dynamic content
+            populateSkills();
+            populateProjects();
+            populateExperience();
+            populateEducation();
+
+            // Hero section animation
+            gsap.from('.hero-content > *', {
+                opacity: 0,
+                y: 50,
+                stagger: 0.3,
+                duration: 1,
+                ease: 'power3.out',
+            });
+
+            // Section scroll animations
+            document.querySelectorAll('.section').forEach((section) => {
+                gsap.fromTo(
+                    section,
+                    { opacity: 0, y: 100 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 1,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 80%',
+                            end: 'bottom 20%',
+                            toggleActions: 'play none none reverse',
+                            onEnter: () => updateActiveNavItem(section.id),
+                            onEnterBack: () => updateActiveNavItem(section.id),
+                        },
+                    }
+                );
+            });
+
+            // Skill bar animation
+            gsap.utils.toArray('.skill-bar-fill').forEach((bar) => {
+                gsap.to(bar, {
+                    width: bar.dataset.width,
+                    duration: 1.5,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: bar,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse',
+                    },
+                });
+            });
+
+            // Project card animation
+            gsap.utils.toArray('.project-card').forEach((card) => {
+                gsap.from(card, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 90%',
+                        toggleActions: 'play none none reverse',
+                    },
+                });
+            });
+
+            // Navbar active state update on scroll
+            function updateActiveNavItem(currentSectionId) {
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    if (item.dataset.target === currentSectionId) {
+                        item.classList.add('gradient-text');
+                        item.classList.remove('text-gray-300');
+                    } else {
+                        item.classList.remove('gradient-text');
+                        item.classList.add('text-gray-300');
+                    }
+                });
+            }
+
+            // Initial active state for home section
+            updateActiveNavItem('home');
+        });
+    </script>
 </body>
 </html>
