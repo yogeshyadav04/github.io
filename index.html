@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yogesh Yadav | Ultimate Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Particles Container -->
+<div id="tsparticles"></div>
+
+<!-- Sidebar Navigation -->
+<nav class="sidebar glass fixed top-1/2 left-4 transform -translate-y-1/2 p-4 rounded-xl text-white z-50 hidden md:block">
+  <ul class="space-y-4">
+    <li><a href="#home" class="hover:text-teal-400">Home</a></li>
+    <li><a href="#about" class="hover:text-teal-400">About</a></li>
+    <li><a href="#skills" class="hover:text-teal-400">Skills</a></li>
+    <li><a href="#projects" class="hover:text-teal-400">Projects</a></li>
+    <li><a href="#contact" class="hover:text-teal-400">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="h-screen flex flex-col justify-center items-center text-center relative z-10">
+  <img src="assets/profile.jpg" class="w-32 h-32 rounded-full border-4 border-teal-400 mb-4 shadow-lg" alt="Yogesh">
+  <h1 class="text-4xl md:text-6xl font-bold text-white">Yogesh Yadav</h1>
+  <p id="typed" class="text-xl text-teal-300 mt-2"></p>
+  <div class="mt-6 space-x-4">
+    <a href="mailto:yogeshpvt04@gmail.com" class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full">Contact Me</a>
+    <a href="yogeshy.pdf" download class="border border-teal-300 text-teal-300 hover:bg-teal-600 hover:text-white px-6 py-2 rounded-full">Download Resume</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section glass p-10 my-10 max-w-4xl mx-auto rounded-xl" data-aos="fade-up">
+  <h2 class="text-3xl text-teal-400 font-bold mb-4">About Me</h2>
+  <p>I’m a passionate Web Developer experienced in building robust backend systems with PHP, Python, Node.js, and intuitive frontend interfaces. I currently work at The AI Matters, contributing to cutting-edge projects and scalable platforms.</p>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section glass p-10 my-10 max-w-4xl mx-auto rounded-xl" data-aos="fade-up">
+  <h2 class="text-3xl text-teal-400 font-bold mb-4">Skills</h2>
+  <div class="flex flex-wrap gap-3">
+    <span class="skill">PHP</span><span class="skill">Python</span><span class="skill">JavaScript</span>
+    <span class="skill">Node.js</span><span class="skill">MySQL</span><span class="skill">MongoDB</span>
+    <span class="skill">Tailwind CSS</span><span class="skill">Git</span><span class="skill">REST APIs</span>
+    <span class="skill">HTML</span><span class="skill">CSS</span>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section glass p-10 my-10 max-w-4xl mx-auto rounded-xl" data-aos="fade-up">
+  <h2 class="text-3xl text-teal-400 font-bold mb-4">Projects</h2>
+  <div id="project-list" class="grid gap-6">Loading...</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section glass p-10 my-10 max-w-4xl mx-auto rounded-xl" data-aos="fade-up">
+  <h2 class="text-3xl text-teal-400 font-bold mb-4">Contact Me</h2>
+  <p>Email: <a href="mailto:yogeshpvt04@gmail.com" class="text-blue-400">yogeshpvt04@gmail.com</a></p>
+  <p>Phone: 8279060252</p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/yogesh-yadav-833b532a5" target="_blank" class="text-blue-400">LinkedIn Profile</a></p>
+</section>
+
+<footer class="text-center text-slate-500 py-6">&copy; 2025 Yogesh Yadav</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
