@@ -50,41 +50,50 @@ ul {
   border-bottom: 2px solid #007bff;
 }
 
-/* Hamburger Menu */
+/* Hamburger */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
+  z-index: 1001;
 }
 
-/* Responsive Nav */
-.nav-menu {
-  display: flex;
-}
+/* Mobile Menu */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
-  .nav-menu {
-    display: none;
+
+  #navMenu {
     position: absolute;
     top: 60px;
     right: 20px;
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
   }
-  .nav-menu.active {
+
+  #navMenu.active {
     display: block;
   }
+
   .nav-links {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
     align-items: flex-start;
   }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
 }
+
 
 /* Sections */
 .section {
