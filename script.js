@@ -78,9 +78,3 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
   initParticles();
 });
-
-// Theme Toggle (Dark <-> Light)
-const themeToggleBtn = document.getElementById("themeToggle");
-themeToggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-});
