@@ -1,28 +1,53 @@
-// Preloader hide on load
+// PRELOADER
 window.addEventListener("load", () => {
   document.querySelector(".preloader").style.display = "none";
 });
 
-// Scroll Reveal Animation
-const reveals = document.querySelectorAll(".reveal");
+// SCROLL PROGRESS BAR
 window.addEventListener("scroll", () => {
-  for (let el of reveals) {
-    const windowHeight = window.innerHeight;
-    const revealTop = el.getBoundingClientRect().top;
-    if (revealTop < windowHeight - 150) {
-      el.classList.add("active");
-    }
-  }
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.querySelector(".scroll-indicator").style.width = scrollPercent + "%";
 });
 
-// Custom Cursor
+// GSAP SCROLL REVEAL
+document.querySelectorAll(".reveal").forEach((el) => {
+  gsap.fromTo(
+    el,
+    { opacity: 0, y: 60 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%",
+      },
+    }
+  );
+});
+
+// MODAL LOGIC
+const modal = document.getElementById("hireMeModal");
+const closeBtn = document.querySelector(".close");
+setTimeout(() => {
+  modal.style.display = "flex";
+}, 5000); // Show after 5s
+
+closeBtn.onclick = () => (modal.style.display = "none");
+window.onclick = (e) => {
+  if (e.target == modal) modal.style.display = "none";
+};
+
+// CUSTOM CURSOR
 const cursor = document.querySelector(".custom-cursor");
 window.addEventListener("mousemove", (e) => {
   cursor.style.top = `${e.clientY}px`;
   cursor.style.left = `${e.clientX}px`;
 });
 
-// Animated Canvas Background
+// CANVAS PARTICLES
 const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -30,8 +55,10 @@ canvas.height = window.innerHeight;
 
 class Particle {
   constructor(x, y, dx, dy, radius) {
-    this.x = x; this.y = y;
-    this.dx = dx; this.dy = dy;
+    this.x = x;
+    this.y = y;
+    this.dx = dx;
+    this.dy = dy;
     this.radius = radius;
     this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
   }
@@ -42,34 +69,35 @@ class Particle {
     ctx.fill();
   }
   update() {
-    if (this.x + this.radius > canvas.width || this.x - this.radius < 0) this.dx = -this.dx;
-    if (this.y + this.radius > canvas.height || this.y - this.radius < 0) this.dy = -this.dy;
+    if (this.x + this.radius > canvas.width || this.x - this.radius < 0)
+      this.dx = -this.dx;
+    if (this.y + this.radius > canvas.height || this.y - this.radius < 0)
+      this.dy = -this.dy;
     this.x += this.dx;
     this.y += this.dy;
     this.draw();
   }
 }
 
-let particles = [];
+let particlesArray = [];
 function initParticles() {
-  particles = [];
+  particlesArray = [];
   for (let i = 0; i < 100; i++) {
-    const radius = Math.random() * 2 + 1;
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const dx = (Math.random() - 0.5) * 2;
-    const dy = (Math.random() - 0.5) * 2;
-    particles.push(new Particle(x, y, dx, dy, radius));
+    let radius = Math.random() * 2 + 1;
+    let x = Math.random() * canvas.width;
+    let y = Math.random() * canvas.height;
+    let dx = (Math.random() - 0.5) * 1.5;
+    let dy = (Math.random() - 0.5) * 1.5;
+    particlesArray.push(new Particle(x, y, dx, dy, radius));
   }
 }
 function animate() {
   requestAnimationFrame(animate);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => p.update());
+  particlesArray.forEach((p) => p.update());
 }
 initParticles();
 animate();
-
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
