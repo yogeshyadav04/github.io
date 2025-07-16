@@ -48,15 +48,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Hamburger toggle
 const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+const navMenu = document.getElementById("navMenu");
 
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+  navMenu.classList.toggle("show");
 });
 
-// Close nav on link click
+// Close menu on link click (optional for smooth UX)
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
+    navMenu.classList.remove("show");
   });
 });
