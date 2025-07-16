@@ -1,4 +1,4 @@
-// Smooth Scroll (optional enhancement for Safari/Edge)
+// Smooth Scroll + Active Nav Highlight
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -9,7 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Active Nav Highlight on Scroll
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
