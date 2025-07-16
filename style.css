@@ -1,22 +1,132 @@
-/* FadeIn Section Animation */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out forwards;
+/* General Section Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* Glowing Profile */
-@keyframes profileGlow {
-  0% { box-shadow: 0 0 10px #9333ea; }
-  100% { box-shadow: 0 0 30px #f472b6; }
-}
-.animate-profileGlow {
-  animation: profileGlow 2.5s infinite alternate;
+.section {
+  padding: 4rem 1.5rem;
 }
 
-/* Pulse for Gradient Headings */
-@keyframes pulseGradient {
-  0% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.85; transform: scale(1.02
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to right, #22c55e, #3b82f6);
+  color: white;
+  padding: 2rem;
+  flex-direction: column;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.hero-buttons {
+  margin-top: 1.5rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  display: inline-block;
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: white;
+  color: #1d4ed8;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background-color: #e0e7ff;
+}
+
+.btn-secondary {
+  background-color: #1e40af;
+  color: white;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+  background-color: #1e3a8a;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  font-size: 1rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+/* Experience, Education, Languages Lists */
+.section-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.75rem;
+}
+
+/* Project Cards */
+.project-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Highlight (active section via JS) */
+nav a.active {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* Scroll progress bar (added dynamically) */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: #22c55e;
+  z-index: 9999;
+  width: 0%;
+}
